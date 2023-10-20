@@ -26,7 +26,7 @@ async def startup_logger():
 async def _shutdown_async_handlers(handlers: list):
     for handler in handlers:
         if isinstance(handler, AsyncQueueStdoutHandler):
-            handler = cast(AsyncQueueStdoutHandler, handlers)
+            handler = cast(AsyncQueueStdoutHandler, handler)
             await handler.shutdown()
 
 

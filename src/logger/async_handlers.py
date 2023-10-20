@@ -36,9 +36,6 @@ class AsyncQueueStdoutHandler(Handler):
 
     async def shutdown(self):
         self.task.cancel()
-        await asyncio.sleep(0)
-        if not self.task.cancelled():
-            await self.task
 
     def __repr__(self):
         level = getLevelName(self.level)
